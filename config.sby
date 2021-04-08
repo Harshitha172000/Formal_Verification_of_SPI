@@ -1,0 +1,16 @@
+[options]
+mode prove
+depth 180
+wait on
+
+[engines]
+smtbmc --dumpsmt2 yices
+
+
+[script]
+read -formal SPIMaster.sv
+prep -top Top
+
+[files]
+SPIMaster.sv
+

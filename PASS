@@ -1,0 +1,5 @@
+Elapsed clock time [H:MM:SS (secs)]: 0:04:40 (280)
+Elapsed process time [H:MM:SS (secs)]: 0:03:16 (196)
+engine_0 (smtbmc --dumpsmt2 yices) returned pass for induction
+engine_0 (smtbmc --dumpsmt2 yices) returned pass for basecase
+successful proof by k-induction.

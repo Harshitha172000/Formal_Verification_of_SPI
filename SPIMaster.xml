@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites disabled="0" errors="0" failures="0" tests="1" time="196">
+<testsuite disabled="0" errors="0" failures="0" name="SPIMaster" skipped="0" tests="1" time="196">
+<properties>
+<property name="os" value="posix"/>
+</properties>
+<testcase classname="SPIMaster" name="default" status="PASS" time="196">
+<system-out>SBY 15:14:49 [SPIMaster] Copy 'SPIMaster.sv' to 'SPIMaster/src/SPIMaster.sv'.
+SBY 15:14:49 [SPIMaster] engine_0: smtbmc --dumpsmt2 yices
+SBY 15:14:49 [SPIMaster] base: starting process &quot;cd SPIMaster/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 15:14:49 [SPIMaster] base: Warning: Yosys has only limited support for tri-state logic at the moment. (SPIMaster.sv:578)
+SBY 15:14:49 [SPIMaster] base: SPIMaster.sv:108: Warning: Identifier `\r_Slave_RX_Byte' is implicitly declared.
+SBY 15:14:49 [SPIMaster] base: Warning: Async reset value `\r_TX_Byte [7]' is not constant!
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_DV is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_Byte [15] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_Byte [14] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_Byte [13] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_Byte [12] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_Byte [11] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_Byte [10] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_Byte [9] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_Byte [8] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_Byte [7] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_Byte [6] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_Byte [5] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_Byte [4] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_Byte [3] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_Byte [2] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_Byte [1] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Slave_TX_Byte [0] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Master_TX_Byte [15] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Master_TX_Byte [14] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Master_TX_Byte [13] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Master_TX_Byte [12] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Master_TX_Byte [11] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Master_TX_Byte [10] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Master_TX_Byte [9] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Master_TX_Byte [8] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Master_TX_Byte [7] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Master_TX_Byte [6] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Master_TX_Byte [5] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Master_TX_Byte [4] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Master_TX_Byte [3] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Master_TX_Byte [2] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Master_TX_Byte [1] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Master_TX_Byte [0] is used but has no driver.
+SBY 15:14:49 [SPIMaster] base: Warning: Wire Top.\r_Clk is used but has no driver.
+SBY 15:14:50 [SPIMaster] base: finished (returncode=0)
+SBY 15:14:50 [SPIMaster] smt2: starting process &quot;cd SPIMaster/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 15:14:50 [SPIMaster] smt2: finished (returncode=0)
+SBY 15:14:50 [SPIMaster] engine_0.basecase: starting process &quot;cd SPIMaster; yosys-smtbmc -s yices --presat --unroll --dump-smt2 engine_0/trace.smt2 --noprogress -t 180  --append 0 --dump-vcd engine_0/trace.vcd --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 15:14:50 [SPIMaster] engine_0.induction: starting process &quot;cd SPIMaster; yosys-smtbmc -s yices --presat --unroll -i --dump-smt2 engine_0/trace_induct.smt2 --noprogress -t 180  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
+SBY 15:14:50 [SPIMaster] engine_0.induction: ##   0:00:00  Solver: yices
+SBY 15:14:50 [SPIMaster] engine_0.basecase: ##   0:00:00  Solver: yices
+SBY 15:14:51 [SPIMaster] engine_0.induction: ##   0:00:00  Trying induction in step 180..
+SBY 15:14:51 [SPIMaster] engine_0.induction: ##   0:00:00  Temporal induction successful.
+SBY 15:14:51 [SPIMaster] engine_0.induction: ##   0:00:00  Status: passed
+SBY 15:14:51 [SPIMaster] engine_0.induction: finished (returncode=0)
+SBY 15:14:51 [SPIMaster] engine_0: Status returned by engine for induction: pass
+SBY 15:14:51 [SPIMaster] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 15:14:51 [SPIMaster] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 15:14:51 [SPIMaster] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 15:14:51 [SPIMaster] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 15:14:52 [SPIMaster] engine_0.basecase: ##   0:00:01  Checking assumptions in step 2..
+SBY 15:14:52 [SPIMaster] engine_0.basecase: ##   0:00:01  Checking assertions in step 2..
+SBY 15:14:52 [SPIMaster] engine_0.basecase: ##   0:00:01  Checking assumptions in step 3..
+SBY 15:14:52 [SPIMaster] engine_0.basecase: ##   0:00:01  Checking assertions in step 3..
+SBY 15:14:52 [SPIMaster] engine_0.basecase: ##   0:00:01  Checking assumptions in step 4..
+SBY 15:14:52 [SPIMaster] engine_0.basecase: ##   0:00:01  Checking assertions in step 4..
+SBY 15:14:52 [SPIMaster] engine_0.basecase: ##   0:00:01  Checking assumptions in step 5..
+SBY 15:14:52 [SPIMaster] engine_0.basecase: ##   0:00:01  Checking assertions in step 5..
+SBY 15:14:53 [SPIMaster] engine_0.basecase: ##   0:00:02  Checking assumptions in step 6..
+SBY 15:14:53 [SPIMaster] engine_0.basecase: ##   0:00:02  Checking assertions in step 6..
+SBY 15:14:53 [SPIMaster] engine_0.basecase: ##   0:00:02  Checking assumptions in step 7..
+SBY 15:14:53 [SPIMaster] engine_0.basecase: ##   0:00:02  Checking assertions in step 7..
+SBY 15:14:53 [SPIMaster] engine_0.basecase: ##   0:00:02  Checking assumptions in step 8..
+SBY 15:14:53 [SPIMaster] engine_0.basecase: ##   0:00:02  Checking assertions in step 8..
+SBY 15:14:54 [SPIMaster] engine_0.basecase: ##   0:00:03  Checking assumptions in step 9..
+SBY 15:14:54 [SPIMaster] engine_0.basecase: ##   0:00:03  Checking assertions in step 9..
+SBY 15:14:54 [SPIMaster] engine_0.basecase: ##   0:00:03  Checking assumptions in step 10..
+SBY 15:14:54 [SPIMaster] engine_0.basecase: ##   0:00:03  Checking assertions in step 10..
+SBY 15:14:54 [SPIMaster] engine_0.basecase: ##   0:00:03  Checking assumptions in step 11..
+SBY 15:14:54 [SPIMaster] engine_0.basecase: ##   0:00:03  Checking assertions in step 11..
+SBY 15:14:54 [SPIMaster] engine_0.basecase: ##   0:00:03  Checking assumptions in step 12..
+SBY 15:14:54 [SPIMaster] engine_0.basecase: ##   0:00:03  Checking assertions in step 12..
+SBY 15:14:55 [SPIMaster] engine_0.basecase: ##   0:00:04  Checking assumptions in step 13..
+SBY 15:14:55 [SPIMaster] engine_0.basecase: ##   0:00:04  Checking assertions in step 13..
+SBY 15:14:55 [SPIMaster] engine_0.basecase: ##   0:00:04  Checking assumptions in step 14..
+SBY 15:14:55 [SPIMaster] engine_0.basecase: ##   0:00:04  Checking assertions in step 14..
+SBY 15:14:55 [SPIMaster] engine_0.basecase: ##   0:00:04  Checking assumptions in step 15..
+SBY 15:14:55 [SPIMaster] engine_0.basecase: ##   0:00:04  Checking assertions in step 15..
+SBY 15:14:55 [SPIMaster] engine_0.basecase: ##   0:00:04  Checking assumptions in step 16..
+SBY 15:14:55 [SPIMaster] engine_0.basecase: ##   0:00:04  Checking assertions in step 16..
+SBY 15:14:56 [SPIMaster] engine_0.basecase: ##   0:00:05  Checking assumptions in step 17..
+SBY 15:14:56 [SPIMaster] engine_0.basecase: ##   0:00:05  Checking assertions in step 17..
+SBY 15:14:56 [SPIMaster] engine_0.basecase: ##   0:00:05  Checking assumptions in step 18..
+SBY 15:14:56 [SPIMaster] engine_0.basecase: ##   0:00:05  Checking assertions in step 18..
+SBY 15:14:56 [SPIMaster] engine_0.basecase: ##   0:00:05  Checking assumptions in step 19..
+SBY 15:14:56 [SPIMaster] engine_0.basecase: ##   0:00:05  Checking assertions in step 19..
+SBY 15:14:56 [SPIMaster] engine_0.basecase: ##   0:00:06  Checking assumptions in step 20..
+SBY 15:14:56 [SPIMaster] engine_0.basecase: ##   0:00:06  Checking assertions in step 20..
+SBY 15:14:57 [SPIMaster] engine_0.basecase: ##   0:00:06  Checking assumptions in step 21..
+SBY 15:14:57 [SPIMaster] engine_0.basecase: ##   0:00:06  Checking assertions in step 21..
+SBY 15:14:57 [SPIMaster] engine_0.basecase: ##   0:00:06  Checking assumptions in step 22..
+SBY 15:14:57 [SPIMaster] engine_0.basecase: ##   0:00:06  Checking assertions in step 22..
+SBY 15:14:58 [SPIMaster] engine_0.basecase: ##   0:00:07  Checking assumptions in step 23..
+SBY 15:14:58 [SPIMaster] engine_0.basecase: ##   0:00:07  Checking assertions in step 23..
+SBY 15:14:58 [SPIMaster] engine_0.basecase: ##   0:00:07  Checking assumptions in step 24..
+SBY 15:14:58 [SPIMaster] engine_0.basecase: ##   0:00:07  Checking assertions in step 24..
+SBY 15:14:58 [SPIMaster] engine_0.basecase: ##   0:00:08  Checking assumptions in step 25..
+SBY 15:14:58 [SPIMaster] engine_0.basecase: ##   0:00:08  Checking assertions in step 25..
+SBY 15:14:59 [SPIMaster] engine_0.basecase: ##   0:00:08  Checking assumptions in step 26..
+SBY 15:14:59 [SPIMaster] engine_0.basecase: ##   0:00:08  Checking assertions in step 26..
+SBY 15:14:59 [SPIMaster] engine_0.basecase: ##   0:00:08  Checking assumptions in step 27..
+SBY 15:14:59 [SPIMaster] engine_0.basecase: ##   0:00:08  Checking assertions in step 27..
+SBY 15:15:00 [SPIMaster] engine_0.basecase: ##   0:00:09  Checking assumptions in step 28..
+SBY 15:15:00 [SPIMaster] engine_0.basecase: ##   0:00:09  Checking assertions in step 28..
+SBY 15:15:00 [SPIMaster] engine_0.basecase: ##   0:00:10  Checking assumptions in step 29..
+SBY 15:15:00 [SPIMaster] engine_0.basecase: ##   0:00:10  Checking assertions in step 29..
+SBY 15:15:01 [SPIMaster] engine_0.basecase: ##   0:00:10  Checking assumptions in step 30..
+SBY 15:15:01 [SPIMaster] engine_0.basecase: ##   0:00:10  Checking assertions in step 30..
+SBY 15:15:02 [SPIMaster] engine_0.basecase: ##   0:00:11  Checking assumptions in step 31..
+SBY 15:15:02 [SPIMaster] engine_0.basecase: ##   0:00:11  Checking assertions in step 31..
+SBY 15:15:02 [SPIMaster] engine_0.basecase: ##   0:00:11  Checking assumptions in step 32..
+SBY 15:15:02 [SPIMaster] engine_0.basecase: ##   0:00:11  Checking assertions in step 32..
+SBY 15:15:03 [SPIMaster] engine_0.basecase: ##   0:00:12  Checking assumptions in step 33..
+SBY 15:15:03 [SPIMaster] engine_0.basecase: ##   0:00:12  Checking assertions in step 33..
+SBY 15:15:03 [SPIMaster] engine_0.basecase: ##   0:00:12  Checking assumptions in step 34..
+SBY 15:15:03 [SPIMaster] engine_0.basecase: ##   0:00:12  Checking assertions in step 34..
+SBY 15:15:04 [SPIMaster] engine_0.basecase: ##   0:00:13  Checking assumptions in step 35..
+SBY 15:15:04 [SPIMaster] engine_0.basecase: ##   0:00:13  Checking assertions in step 35..
+SBY 15:15:05 [SPIMaster] engine_0.basecase: ##   0:00:14  Checking assumptions in step 36..
+SBY 15:15:05 [SPIMaster] engine_0.basecase: ##   0:00:14  Checking assertions in step 36..
+SBY 15:15:05 [SPIMaster] engine_0.basecase: ##   0:00:15  Checking assumptions in step 37..
+SBY 15:15:05 [SPIMaster] engine_0.basecase: ##   0:00:15  Checking assertions in step 37..
+SBY 15:15:06 [SPIMaster] engine_0.basecase: ##   0:00:15  Checking assumptions in step 38..
+SBY 15:15:06 [SPIMaster] engine_0.basecase: ##   0:00:15  Checking assertions in step 38..
+SBY 15:15:06 [SPIMaster] engine_0.basecase: ##   0:00:16  Checking assumptions in step 39..
+SBY 15:15:06 [SPIMaster] engine_0.basecase: ##   0:00:16  Checking assertions in step 39..
+SBY 15:15:07 [SPIMaster] engine_0.basecase: ##   0:00:16  Checking assumptions in step 40..
+SBY 15:15:07 [SPIMaster] engine_0.basecase: ##   0:00:16  Checking assertions in step 40..
+SBY 15:15:08 [SPIMaster] engine_0.basecase: ##   0:00:17  Checking assumptions in step 41..
+SBY 15:15:08 [SPIMaster] engine_0.basecase: ##   0:00:17  Checking assertions in step 41..
+SBY 15:15:09 [SPIMaster] engine_0.basecase: ##   0:00:18  Checking assumptions in step 42..
+SBY 15:15:09 [SPIMaster] engine_0.basecase: ##   0:00:18  Checking assertions in step 42..
+SBY 15:15:09 [SPIMaster] engine_0.basecase: ##   0:00:18  Checking assumptions in step 43..
+SBY 15:15:09 [SPIMaster] engine_0.basecase: ##   0:00:18  Checking assertions in step 43..
+SBY 15:15:10 [SPIMaster] engine_0.basecase: ##   0:00:19  Checking assumptions in step 44..
+SBY 15:15:10 [SPIMaster] engine_0.basecase: ##   0:00:19  Checking assertions in step 44..
+SBY 15:15:11 [SPIMaster] engine_0.basecase: ##   0:00:20  Checking assumptions in step 45..
+SBY 15:15:11 [SPIMaster] engine_0.basecase: ##   0:00:20  Checking assertions in step 45..
+SBY 15:15:11 [SPIMaster] engine_0.basecase: ##   0:00:20  Checking assumptions in step 46..
+SBY 15:15:11 [SPIMaster] engine_0.basecase: ##   0:00:20  Checking assertions in step 46..
+SBY 15:15:12 [SPIMaster] engine_0.basecase: ##   0:00:21  Checking assumptions in step 47..
+SBY 15:15:12 [SPIMaster] engine_0.basecase: ##   0:00:21  Checking assertions in step 47..
+SBY 15:15:13 [SPIMaster] engine_0.basecase: ##   0:00:22  Checking assumptions in step 48..
+SBY 15:15:13 [SPIMaster] engine_0.basecase: ##   0:00:22  Checking assertions in step 48..
+SBY 15:15:13 [SPIMaster] engine_0.basecase: ##   0:00:22  Checking assumptions in step 49..
+SBY 15:15:13 [SPIMaster] engine_0.basecase: ##   0:00:22  Checking assertions in step 49..
+SBY 15:15:14 [SPIMaster] engine_0.basecase: ##   0:00:23  Checking assumptions in step 50..
+SBY 15:15:14 [SPIMaster] engine_0.basecase: ##   0:00:23  Checking assertions in step 50..
+SBY 15:15:15 [SPIMaster] engine_0.basecase: ##   0:00:24  Checking assumptions in step 51..
+SBY 15:15:15 [SPIMaster] engine_0.basecase: ##   0:00:24  Checking assertions in step 51..
+SBY 15:15:15 [SPIMaster] engine_0.basecase: ##   0:00:24  Checking assumptions in step 52..
+SBY 15:15:15 [SPIMaster] engine_0.basecase: ##   0:00:24  Checking assertions in step 52..
+SBY 15:15:16 [SPIMaster] engine_0.basecase: ##   0:00:25  Checking assumptions in step 53..
+SBY 15:15:16 [SPIMaster] engine_0.basecase: ##   0:00:25  Checking assertions in step 53..
+SBY 15:15:17 [SPIMaster] engine_0.basecase: ##   0:00:26  Checking assumptions in step 54..
+SBY 15:15:17 [SPIMaster] engine_0.basecase: ##   0:00:26  Checking assertions in step 54..
+SBY 15:15:18 [SPIMaster] engine_0.basecase: ##   0:00:27  Checking assumptions in step 55..
+SBY 15:15:18 [SPIMaster] engine_0.basecase: ##   0:00:27  Checking assertions in step 55..
+SBY 15:15:18 [SPIMaster] engine_0.basecase: ##   0:00:27  Checking assumptions in step 56..
+SBY 15:15:18 [SPIMaster] engine_0.basecase: ##   0:00:27  Checking assertions in step 56..
+SBY 15:15:19 [SPIMaster] engine_0.basecase: ##   0:00:28  Checking assumptions in step 57..
+SBY 15:15:19 [SPIMaster] engine_0.basecase: ##   0:00:28  Checking assertions in step 57..
+SBY 15:15:19 [SPIMaster] engine_0.basecase: ##   0:00:29  Checking assumptions in step 58..
+SBY 15:15:19 [SPIMaster] engine_0.basecase: ##   0:00:29  Checking assertions in step 58..
+SBY 15:15:20 [SPIMaster] engine_0.basecase: ##   0:00:29  Checking assumptions in step 59..
+SBY 15:15:20 [SPIMaster] engine_0.basecase: ##   0:00:29  Checking assertions in step 59..
+SBY 15:15:21 [SPIMaster] engine_0.basecase: ##   0:00:30  Checking assumptions in step 60..
+SBY 15:15:21 [SPIMaster] engine_0.basecase: ##   0:00:30  Checking assertions in step 60..
+SBY 15:15:22 [SPIMaster] engine_0.basecase: ##   0:00:31  Checking assumptions in step 61..
+SBY 15:15:22 [SPIMaster] engine_0.basecase: ##   0:00:31  Checking assertions in step 61..
+SBY 15:15:23 [SPIMaster] engine_0.basecase: ##   0:00:32  Checking assumptions in step 62..
+SBY 15:15:23 [SPIMaster] engine_0.basecase: ##   0:00:32  Checking assertions in step 62..
+SBY 15:15:24 [SPIMaster] engine_0.basecase: ##   0:00:33  Checking assumptions in step 63..
+SBY 15:15:24 [SPIMaster] engine_0.basecase: ##   0:00:33  Checking assertions in step 63..
+SBY 15:15:24 [SPIMaster] engine_0.basecase: ##   0:00:33  Checking assumptions in step 64..
+SBY 15:15:24 [SPIMaster] engine_0.basecase: ##   0:00:33  Checking assertions in step 64..
+SBY 15:15:25 [SPIMaster] engine_0.basecase: ##   0:00:34  Checking assumptions in step 65..
+SBY 15:15:25 [SPIMaster] engine_0.basecase: ##   0:00:34  Checking assertions in step 65..
+SBY 15:15:26 [SPIMaster] engine_0.basecase: ##   0:00:35  Checking assumptions in step 66..
+SBY 15:15:26 [SPIMaster] engine_0.basecase: ##   0:00:35  Checking assertions in step 66..
+SBY 15:15:27 [SPIMaster] engine_0.basecase: ##   0:00:36  Checking assumptions in step 67..
+SBY 15:15:27 [SPIMaster] engine_0.basecase: ##   0:00:36  Checking assertions in step 67..
+SBY 15:15:28 [SPIMaster] engine_0.basecase: ##   0:00:37  Checking assumptions in step 68..
+SBY 15:15:28 [SPIMaster] engine_0.basecase: ##   0:00:37  Checking assertions in step 68..
+SBY 15:15:29 [SPIMaster] engine_0.basecase: ##   0:00:38  Checking assumptions in step 69..
+SBY 15:15:29 [SPIMaster] engine_0.basecase: ##   0:00:38  Checking assertions in step 69..
+SBY 15:15:30 [SPIMaster] engine_0.basecase: ##   0:00:39  Checking assumptions in step 70..
+SBY 15:15:30 [SPIMaster] engine_0.basecase: ##   0:00:39  Checking assertions in step 70..
+SBY 15:15:31 [SPIMaster] engine_0.basecase: ##   0:00:40  Checking assumptions in step 71..
+SBY 15:15:31 [SPIMaster] engine_0.basecase: ##   0:00:40  Checking assertions in step 71..
+SBY 15:15:32 [SPIMaster] engine_0.basecase: ##   0:00:41  Checking assumptions in step 72..
+SBY 15:15:32 [SPIMaster] engine_0.basecase: ##   0:00:41  Checking assertions in step 72..
+SBY 15:15:33 [SPIMaster] engine_0.basecase: ##   0:00:42  Checking assumptions in step 73..
+SBY 15:15:33 [SPIMaster] engine_0.basecase: ##   0:00:42  Checking assertions in step 73..
+SBY 15:15:34 [SPIMaster] engine_0.basecase: ##   0:00:43  Checking assumptions in step 74..
+SBY 15:15:34 [SPIMaster] engine_0.basecase: ##   0:00:43  Checking assertions in step 74..
+SBY 15:15:35 [SPIMaster] engine_0.basecase: ##   0:00:44  Checking assumptions in step 75..
+SBY 15:15:35 [SPIMaster] engine_0.basecase: ##   0:00:44  Checking assertions in step 75..
+SBY 15:15:36 [SPIMaster] engine_0.basecase: ##   0:00:45  Checking assumptions in step 76..
+SBY 15:15:36 [SPIMaster] engine_0.basecase: ##   0:00:45  Checking assertions in step 76..
+SBY 15:15:37 [SPIMaster] engine_0.basecase: ##   0:00:46  Checking assumptions in step 77..
+SBY 15:15:37 [SPIMaster] engine_0.basecase: ##   0:00:46  Checking assertions in step 77..
+SBY 15:15:38 [SPIMaster] engine_0.basecase: ##   0:00:47  Checking assumptions in step 78..
+SBY 15:15:38 [SPIMaster] engine_0.basecase: ##   0:00:47  Checking assertions in step 78..
+SBY 15:15:39 [SPIMaster] engine_0.basecase: ##   0:00:48  Checking assumptions in step 79..
+SBY 15:15:39 [SPIMaster] engine_0.basecase: ##   0:00:48  Checking assertions in step 79..
+SBY 15:15:40 [SPIMaster] engine_0.basecase: ##   0:00:49  Checking assumptions in step 80..
+SBY 15:15:40 [SPIMaster] engine_0.basecase: ##   0:00:49  Checking assertions in step 80..
+SBY 15:15:41 [SPIMaster] engine_0.basecase: ##   0:00:50  Checking assumptions in step 81..
+SBY 15:15:41 [SPIMaster] engine_0.basecase: ##   0:00:50  Checking assertions in step 81..
+SBY 15:15:42 [SPIMaster] engine_0.basecase: ##   0:00:51  Checking assumptions in step 82..
+SBY 15:15:42 [SPIMaster] engine_0.basecase: ##   0:00:51  Checking assertions in step 82..
+SBY 15:15:43 [SPIMaster] engine_0.basecase: ##   0:00:52  Checking assumptions in step 83..
+SBY 15:15:43 [SPIMaster] engine_0.basecase: ##   0:00:52  Checking assertions in step 83..
+SBY 15:15:44 [SPIMaster] engine_0.basecase: ##   0:00:53  Checking assumptions in step 84..
+SBY 15:15:44 [SPIMaster] engine_0.basecase: ##   0:00:53  Checking assertions in step 84..
+SBY 15:15:45 [SPIMaster] engine_0.basecase: ##   0:00:54  Checking assumptions in step 85..
+SBY 15:15:45 [SPIMaster] engine_0.basecase: ##   0:00:54  Checking assertions in step 85..
+SBY 15:15:46 [SPIMaster] engine_0.basecase: ##   0:00:56  Checking assumptions in step 86..
+SBY 15:15:46 [SPIMaster] engine_0.basecase: ##   0:00:56  Checking assertions in step 86..
+SBY 15:15:47 [SPIMaster] engine_0.basecase: ##   0:00:56  Checking assumptions in step 87..
+SBY 15:15:47 [SPIMaster] engine_0.basecase: ##   0:00:56  Checking assertions in step 87..
+SBY 15:15:49 [SPIMaster] engine_0.basecase: ##   0:00:58  Checking assumptions in step 88..
+SBY 15:15:49 [SPIMaster] engine_0.basecase: ##   0:00:58  Checking assertions in step 88..
+SBY 15:15:50 [SPIMaster] engine_0.basecase: ##   0:00:59  Checking assumptions in step 89..
+SBY 15:15:50 [SPIMaster] engine_0.basecase: ##   0:00:59  Checking assertions in step 89..
+SBY 15:15:51 [SPIMaster] engine_0.basecase: ##   0:01:00  Checking assumptions in step 90..
+SBY 15:15:51 [SPIMaster] engine_0.basecase: ##   0:01:00  Checking assertions in step 90..
+SBY 15:15:52 [SPIMaster] engine_0.basecase: ##   0:01:01  Checking assumptions in step 91..
+SBY 15:15:52 [SPIMaster] engine_0.basecase: ##   0:01:01  Checking assertions in step 91..
+SBY 15:15:53 [SPIMaster] engine_0.basecase: ##   0:01:02  Checking assumptions in step 92..
+SBY 15:15:53 [SPIMaster] engine_0.basecase: ##   0:01:02  Checking assertions in step 92..
+SBY 15:15:55 [SPIMaster] engine_0.basecase: ##   0:01:04  Checking assumptions in step 93..
+SBY 15:15:55 [SPIMaster] engine_0.basecase: ##   0:01:04  Checking assertions in step 93..
+SBY 15:15:56 [SPIMaster] engine_0.basecase: ##   0:01:05  Checking assumptions in step 94..
+SBY 15:15:56 [SPIMaster] engine_0.basecase: ##   0:01:05  Checking assertions in step 94..
+SBY 15:15:57 [SPIMaster] engine_0.basecase: ##   0:01:06  Checking assumptions in step 95..
+SBY 15:15:57 [SPIMaster] engine_0.basecase: ##   0:01:06  Checking assertions in step 95..
+SBY 15:15:59 [SPIMaster] engine_0.basecase: ##   0:01:08  Checking assumptions in step 96..
+SBY 15:15:59 [SPIMaster] engine_0.basecase: ##   0:01:08  Checking assertions in step 96..
+SBY 15:16:00 [SPIMaster] engine_0.basecase: ##   0:01:10  Checking assumptions in step 97..
+SBY 15:16:00 [SPIMaster] engine_0.basecase: ##   0:01:10  Checking assertions in step 97..
+SBY 15:16:01 [SPIMaster] engine_0.basecase: ##   0:01:11  Checking assumptions in step 98..
+SBY 15:16:01 [SPIMaster] engine_0.basecase: ##   0:01:11  Checking assertions in step 98..
+SBY 15:16:02 [SPIMaster] engine_0.basecase: ##   0:01:12  Checking assumptions in step 99..
+SBY 15:16:03 [SPIMaster] engine_0.basecase: ##   0:01:12  Checking assertions in step 99..
+SBY 15:16:04 [SPIMaster] engine_0.basecase: ##   0:01:13  Checking assumptions in step 100..
+SBY 15:16:04 [SPIMaster] engine_0.basecase: ##   0:01:13  Checking assertions in step 100..
+SBY 15:16:05 [SPIMaster] engine_0.basecase: ##   0:01:14  Checking assumptions in step 101..
+SBY 15:16:05 [SPIMaster] engine_0.basecase: ##   0:01:14  Checking assertions in step 101..
+SBY 15:16:06 [SPIMaster] engine_0.basecase: ##   0:01:15  Checking assumptions in step 102..
+SBY 15:16:06 [SPIMaster] engine_0.basecase: ##   0:01:15  Checking assertions in step 102..
+SBY 15:16:07 [SPIMaster] engine_0.basecase: ##   0:01:16  Checking assumptions in step 103..
+SBY 15:16:07 [SPIMaster] engine_0.basecase: ##   0:01:16  Checking assertions in step 103..
+SBY 15:16:08 [SPIMaster] engine_0.basecase: ##   0:01:18  Checking assumptions in step 104..
+SBY 15:16:08 [SPIMaster] engine_0.basecase: ##   0:01:18  Checking assertions in step 104..
+SBY 15:16:10 [SPIMaster] engine_0.basecase: ##   0:01:19  Checking assumptions in step 105..
+SBY 15:16:10 [SPIMaster] engine_0.basecase: ##   0:01:19  Checking assertions in step 105..
+SBY 15:16:12 [SPIMaster] engine_0.basecase: ##   0:01:21  Checking assumptions in step 106..
+SBY 15:16:12 [SPIMaster] engine_0.basecase: ##   0:01:21  Checking assertions in step 106..
+SBY 15:16:14 [SPIMaster] engine_0.basecase: ##   0:01:23  Checking assumptions in step 107..
+SBY 15:16:14 [SPIMaster] engine_0.basecase: ##   0:01:23  Checking assertions in step 107..
+SBY 15:16:16 [SPIMaster] engine_0.basecase: ##   0:01:25  Checking assumptions in step 108..
+SBY 15:16:16 [SPIMaster] engine_0.basecase: ##   0:01:25  Checking assertions in step 108..
+SBY 15:16:17 [SPIMaster] engine_0.basecase: ##   0:01:26  Checking assumptions in step 109..
+SBY 15:16:17 [SPIMaster] engine_0.basecase: ##   0:01:26  Checking assertions in step 109..
+SBY 15:16:19 [SPIMaster] engine_0.basecase: ##   0:01:29  Checking assumptions in step 110..
+SBY 15:16:20 [SPIMaster] engine_0.basecase: ##   0:01:29  Checking assertions in step 110..
+SBY 15:16:23 [SPIMaster] engine_0.basecase: ##   0:01:32  Checking assumptions in step 111..
+SBY 15:16:23 [SPIMaster] engine_0.basecase: ##   0:01:32  Checking assertions in step 111..
+SBY 15:16:25 [SPIMaster] engine_0.basecase: ##   0:01:34  Checking assumptions in step 112..
+SBY 15:16:25 [SPIMaster] engine_0.basecase: ##   0:01:34  Checking assertions in step 112..
+SBY 15:16:29 [SPIMaster] engine_0.basecase: ##   0:01:38  Checking assumptions in step 113..
+SBY 15:16:29 [SPIMaster] engine_0.basecase: ##   0:01:38  Checking assertions in step 113..
+SBY 15:16:31 [SPIMaster] engine_0.basecase: ##   0:01:40  Checking assumptions in step 114..
+SBY 15:16:31 [SPIMaster] engine_0.basecase: ##   0:01:40  Checking assertions in step 114..
+SBY 15:16:35 [SPIMaster] engine_0.basecase: ##   0:01:44  Checking assumptions in step 115..
+SBY 15:16:35 [SPIMaster] engine_0.basecase: ##   0:01:44  Checking assertions in step 115..
+SBY 15:16:40 [SPIMaster] engine_0.basecase: ##   0:01:49  Checking assumptions in step 116..
+SBY 15:16:40 [SPIMaster] engine_0.basecase: ##   0:01:49  Checking assertions in step 116..
+SBY 15:16:42 [SPIMaster] engine_0.basecase: ##   0:01:51  Checking assumptions in step 117..
+SBY 15:16:42 [SPIMaster] engine_0.basecase: ##   0:01:51  Checking assertions in step 117..
+SBY 15:16:48 [SPIMaster] engine_0.basecase: ##   0:01:57  Checking assumptions in step 118..
+SBY 15:16:48 [SPIMaster] engine_0.basecase: ##   0:01:57  Checking assertions in step 118..
+SBY 15:16:52 [SPIMaster] engine_0.basecase: ##   0:02:01  Checking assumptions in step 119..
+SBY 15:16:52 [SPIMaster] engine_0.basecase: ##   0:02:01  Checking assertions in step 119..
+SBY 15:16:57 [SPIMaster] engine_0.basecase: ##   0:02:06  Checking assumptions in step 120..
+SBY 15:16:57 [SPIMaster] engine_0.basecase: ##   0:02:06  Checking assertions in step 120..
+SBY 15:17:03 [SPIMaster] engine_0.basecase: ##   0:02:12  Checking assumptions in step 121..
+SBY 15:17:03 [SPIMaster] engine_0.basecase: ##   0:02:12  Checking assertions in step 121..
+SBY 15:17:06 [SPIMaster] engine_0.basecase: ##   0:02:15  Checking assumptions in step 122..
+SBY 15:17:06 [SPIMaster] engine_0.basecase: ##   0:02:15  Checking assertions in step 122..
+SBY 15:17:11 [SPIMaster] engine_0.basecase: ##   0:02:20  Checking assumptions in step 123..
+SBY 15:17:11 [SPIMaster] engine_0.basecase: ##   0:02:20  Checking assertions in step 123..
+SBY 15:17:15 [SPIMaster] engine_0.basecase: ##   0:02:24  Checking assumptions in step 124..
+SBY 15:17:15 [SPIMaster] engine_0.basecase: ##   0:02:24  Checking assertions in step 124..
+SBY 15:17:18 [SPIMaster] engine_0.basecase: ##   0:02:27  Checking assumptions in step 125..
+SBY 15:17:18 [SPIMaster] engine_0.basecase: ##   0:02:27  Checking assertions in step 125..
+SBY 15:17:22 [SPIMaster] engine_0.basecase: ##   0:02:31  Checking assumptions in step 126..
+SBY 15:17:22 [SPIMaster] engine_0.basecase: ##   0:02:31  Checking assertions in step 126..
+SBY 15:17:26 [SPIMaster] engine_0.basecase: ##   0:02:35  Checking assumptions in step 127..
+SBY 15:17:26 [SPIMaster] engine_0.basecase: ##   0:02:35  Checking assertions in step 127..
+SBY 15:17:30 [SPIMaster] engine_0.basecase: ##   0:02:39  Checking assumptions in step 128..
+SBY 15:17:30 [SPIMaster] engine_0.basecase: ##   0:02:39  Checking assertions in step 128..
+SBY 15:17:31 [SPIMaster] engine_0.basecase: ##   0:02:40  Checking assumptions in step 129..
+SBY 15:17:31 [SPIMaster] engine_0.basecase: ##   0:02:40  Checking assertions in step 129..
+SBY 15:17:34 [SPIMaster] engine_0.basecase: ##   0:02:43  Checking assumptions in step 130..
+SBY 15:17:34 [SPIMaster] engine_0.basecase: ##   0:02:43  Checking assertions in step 130..
+SBY 15:17:35 [SPIMaster] engine_0.basecase: ##   0:02:44  Checking assumptions in step 131..
+SBY 15:17:35 [SPIMaster] engine_0.basecase: ##   0:02:44  Checking assertions in step 131..
+SBY 15:17:37 [SPIMaster] engine_0.basecase: ##   0:02:46  Checking assumptions in step 132..
+SBY 15:17:37 [SPIMaster] engine_0.basecase: ##   0:02:46  Checking assertions in step 132..
+SBY 15:17:41 [SPIMaster] engine_0.basecase: ##   0:02:50  Checking assumptions in step 133..
+SBY 15:17:41 [SPIMaster] engine_0.basecase: ##   0:02:50  Checking assertions in step 133..
+SBY 15:17:43 [SPIMaster] engine_0.basecase: ##   0:02:52  Checking assumptions in step 134..
+SBY 15:17:43 [SPIMaster] engine_0.basecase: ##   0:02:52  Checking assertions in step 134..
+SBY 15:17:45 [SPIMaster] engine_0.basecase: ##   0:02:54  Checking assumptions in step 135..
+SBY 15:17:45 [SPIMaster] engine_0.basecase: ##   0:02:54  Checking assertions in step 135..
+SBY 15:17:47 [SPIMaster] engine_0.basecase: ##   0:02:56  Checking assumptions in step 136..
+SBY 15:17:47 [SPIMaster] engine_0.basecase: ##   0:02:56  Checking assertions in step 136..
+SBY 15:17:49 [SPIMaster] engine_0.basecase: ##   0:02:58  Checking assumptions in step 137..
+SBY 15:17:49 [SPIMaster] engine_0.basecase: ##   0:02:58  Checking assertions in step 137..
+SBY 15:17:52 [SPIMaster] engine_0.basecase: ##   0:03:01  Checking assumptions in step 138..
+SBY 15:17:52 [SPIMaster] engine_0.basecase: ##   0:03:01  Checking assertions in step 138..
+SBY 15:17:53 [SPIMaster] engine_0.basecase: ##   0:03:02  Checking assumptions in step 139..
+SBY 15:17:53 [SPIMaster] engine_0.basecase: ##   0:03:02  Checking assertions in step 139..
+SBY 15:17:54 [SPIMaster] engine_0.basecase: ##   0:03:03  Checking assumptions in step 140..
+SBY 15:17:54 [SPIMaster] engine_0.basecase: ##   0:03:03  Checking assertions in step 140..
+SBY 15:17:56 [SPIMaster] engine_0.basecase: ##   0:03:06  Checking assumptions in step 141..
+SBY 15:17:56 [SPIMaster] engine_0.basecase: ##   0:03:06  Checking assertions in step 141..
+SBY 15:17:58 [SPIMaster] engine_0.basecase: ##   0:03:07  Checking assumptions in step 142..
+SBY 15:17:58 [SPIMaster] engine_0.basecase: ##   0:03:07  Checking assertions in step 142..
+SBY 15:18:01 [SPIMaster] engine_0.basecase: ##   0:03:10  Checking assumptions in step 143..
+SBY 15:18:01 [SPIMaster] engine_0.basecase: ##   0:03:10  Checking assertions in step 143..
+SBY 15:18:03 [SPIMaster] engine_0.basecase: ##   0:03:12  Checking assumptions in step 144..
+SBY 15:18:03 [SPIMaster] engine_0.basecase: ##   0:03:12  Checking assertions in step 144..
+SBY 15:18:05 [SPIMaster] engine_0.basecase: ##   0:03:14  Checking assumptions in step 145..
+SBY 15:18:05 [SPIMaster] engine_0.basecase: ##   0:03:14  Checking assertions in step 145..
+SBY 15:18:07 [SPIMaster] engine_0.basecase: ##   0:03:16  Checking assumptions in step 146..
+SBY 15:18:07 [SPIMaster] engine_0.basecase: ##   0:03:16  Checking assertions in step 146..
+SBY 15:18:10 [SPIMaster] engine_0.basecase: ##   0:03:19  Checking assumptions in step 147..
+SBY 15:18:10 [SPIMaster] engine_0.basecase: ##   0:03:19  Checking assertions in step 147..
+SBY 15:18:12 [SPIMaster] engine_0.basecase: ##   0:03:21  Checking assumptions in step 148..
+SBY 15:18:12 [SPIMaster] engine_0.basecase: ##   0:03:21  Checking assertions in step 148..
+SBY 15:18:14 [SPIMaster] engine_0.basecase: ##   0:03:23  Checking assumptions in step 149..
+SBY 15:18:14 [SPIMaster] engine_0.basecase: ##   0:03:23  Checking assertions in step 149..
+SBY 15:18:16 [SPIMaster] engine_0.basecase: ##   0:03:25  Checking assumptions in step 150..
+SBY 15:18:16 [SPIMaster] engine_0.basecase: ##   0:03:25  Checking assertions in step 150..
+SBY 15:18:19 [SPIMaster] engine_0.basecase: ##   0:03:28  Checking assumptions in step 151..
+SBY 15:18:19 [SPIMaster] engine_0.basecase: ##   0:03:28  Checking assertions in step 151..
+SBY 15:18:22 [SPIMaster] engine_0.basecase: ##   0:03:31  Checking assumptions in step 152..
+SBY 15:18:22 [SPIMaster] engine_0.basecase: ##   0:03:31  Checking assertions in step 152..
+SBY 15:18:24 [SPIMaster] engine_0.basecase: ##   0:03:33  Checking assumptions in step 153..
+SBY 15:18:24 [SPIMaster] engine_0.basecase: ##   0:03:33  Checking assertions in step 153..
+SBY 15:18:27 [SPIMaster] engine_0.basecase: ##   0:03:36  Checking assumptions in step 154..
+SBY 15:18:27 [SPIMaster] engine_0.basecase: ##   0:03:36  Checking assertions in step 154..
+SBY 15:18:29 [SPIMaster] engine_0.basecase: ##   0:03:38  Checking assumptions in step 155..
+SBY 15:18:29 [SPIMaster] engine_0.basecase: ##   0:03:38  Checking assertions in step 155..
+SBY 15:18:32 [SPIMaster] engine_0.basecase: ##   0:03:41  Checking assumptions in step 156..
+SBY 15:18:32 [SPIMaster] engine_0.basecase: ##   0:03:41  Checking assertions in step 156..
+SBY 15:18:34 [SPIMaster] engine_0.basecase: ##   0:03:43  Checking assumptions in step 157..
+SBY 15:18:34 [SPIMaster] engine_0.basecase: ##   0:03:43  Checking assertions in step 157..
+SBY 15:18:35 [SPIMaster] engine_0.basecase: ##   0:03:45  Checking assumptions in step 158..
+SBY 15:18:36 [SPIMaster] engine_0.basecase: ##   0:03:45  Checking assertions in step 158..
+SBY 15:18:39 [SPIMaster] engine_0.basecase: ##   0:03:48  Checking assumptions in step 159..
+SBY 15:18:39 [SPIMaster] engine_0.basecase: ##   0:03:48  Checking assertions in step 159..
+SBY 15:18:40 [SPIMaster] engine_0.basecase: ##   0:03:49  Checking assumptions in step 160..
+SBY 15:18:40 [SPIMaster] engine_0.basecase: ##   0:03:49  Checking assertions in step 160..
+SBY 15:18:42 [SPIMaster] engine_0.basecase: ##   0:03:51  Checking assumptions in step 161..
+SBY 15:18:42 [SPIMaster] engine_0.basecase: ##   0:03:51  Checking assertions in step 161..
+SBY 15:18:45 [SPIMaster] engine_0.basecase: ##   0:03:54  Checking assumptions in step 162..
+SBY 15:18:45 [SPIMaster] engine_0.basecase: ##   0:03:54  Checking assertions in step 162..
+SBY 15:18:47 [SPIMaster] engine_0.basecase: ##   0:03:56  Checking assumptions in step 163..
+SBY 15:18:47 [SPIMaster] engine_0.basecase: ##   0:03:56  Checking assertions in step 163..
+SBY 15:18:50 [SPIMaster] engine_0.basecase: ##   0:03:59  Checking assumptions in step 164..
+SBY 15:18:50 [SPIMaster] engine_0.basecase: ##   0:03:59  Checking assertions in step 164..
+SBY 15:18:52 [SPIMaster] engine_0.basecase: ##   0:04:01  Checking assumptions in step 165..
+SBY 15:18:52 [SPIMaster] engine_0.basecase: ##   0:04:01  Checking assertions in step 165..
+SBY 15:18:54 [SPIMaster] engine_0.basecase: ##   0:04:03  Checking assumptions in step 166..
+SBY 15:18:54 [SPIMaster] engine_0.basecase: ##   0:04:03  Checking assertions in step 166..
+SBY 15:18:57 [SPIMaster] engine_0.basecase: ##   0:04:06  Checking assumptions in step 167..
+SBY 15:18:57 [SPIMaster] engine_0.basecase: ##   0:04:06  Checking assertions in step 167..
+SBY 15:19:00 [SPIMaster] engine_0.basecase: ##   0:04:09  Checking assumptions in step 168..
+SBY 15:19:00 [SPIMaster] engine_0.basecase: ##   0:04:09  Checking assertions in step 168..
+SBY 15:19:02 [SPIMaster] engine_0.basecase: ##   0:04:11  Checking assumptions in step 169..
+SBY 15:19:02 [SPIMaster] engine_0.basecase: ##   0:04:11  Checking assertions in step 169..
+SBY 15:19:04 [SPIMaster] engine_0.basecase: ##   0:04:13  Checking assumptions in step 170..
+SBY 15:19:04 [SPIMaster] engine_0.basecase: ##   0:04:13  Checking assertions in step 170..
+SBY 15:19:06 [SPIMaster] engine_0.basecase: ##   0:04:15  Checking assumptions in step 171..
+SBY 15:19:06 [SPIMaster] engine_0.basecase: ##   0:04:15  Checking assertions in step 171..
+SBY 15:19:09 [SPIMaster] engine_0.basecase: ##   0:04:18  Checking assumptions in step 172..
+SBY 15:19:09 [SPIMaster] engine_0.basecase: ##   0:04:18  Checking assertions in step 172..
+SBY 15:19:11 [SPIMaster] engine_0.basecase: ##   0:04:20  Checking assumptions in step 173..
+SBY 15:19:11 [SPIMaster] engine_0.basecase: ##   0:04:20  Checking assertions in step 173..
+SBY 15:19:14 [SPIMaster] engine_0.basecase: ##   0:04:23  Checking assumptions in step 174..
+SBY 15:19:14 [SPIMaster] engine_0.basecase: ##   0:04:23  Checking assertions in step 174..
+SBY 15:19:16 [SPIMaster] engine_0.basecase: ##   0:04:26  Checking assumptions in step 175..
+SBY 15:19:16 [SPIMaster] engine_0.basecase: ##   0:04:26  Checking assertions in step 175..
+SBY 15:19:19 [SPIMaster] engine_0.basecase: ##   0:04:28  Checking assumptions in step 176..
+SBY 15:19:19 [SPIMaster] engine_0.basecase: ##   0:04:28  Checking assertions in step 176..
+SBY 15:19:22 [SPIMaster] engine_0.basecase: ##   0:04:31  Checking assumptions in step 177..
+SBY 15:19:22 [SPIMaster] engine_0.basecase: ##   0:04:31  Checking assertions in step 177..
+SBY 15:19:24 [SPIMaster] engine_0.basecase: ##   0:04:33  Checking assumptions in step 178..
+SBY 15:19:24 [SPIMaster] engine_0.basecase: ##   0:04:33  Checking assertions in step 178..
+SBY 15:19:27 [SPIMaster] engine_0.basecase: ##   0:04:36  Checking assumptions in step 179..
+SBY 15:19:27 [SPIMaster] engine_0.basecase: ##   0:04:36  Checking assertions in step 179..
+SBY 15:19:29 [SPIMaster] engine_0.basecase: ##   0:04:38  Status: passed
+SBY 15:19:29 [SPIMaster] engine_0.basecase: finished (returncode=0)
+SBY 15:19:29 [SPIMaster] engine_0: Status returned by engine for basecase: pass
+SBY 15:19:29 [SPIMaster] summary: Elapsed clock time [H:MM:SS (secs)]: 0:04:40 (280)
+SBY 15:19:29 [SPIMaster] summary: Elapsed process time [H:MM:SS (secs)]: 0:03:16 (196)
+SBY 15:19:29 [SPIMaster] summary: engine_0 (smtbmc --dumpsmt2 yices) returned pass for induction
+SBY 15:19:29 [SPIMaster] summary: engine_0 (smtbmc --dumpsmt2 yices) returned pass for basecase
+SBY 15:19:29 [SPIMaster] summary: successful proof by k-induction.
+SBY 15:19:29 [SPIMaster] DONE (PASS, rc=0)
+</system-out></testcase></testsuite></testsuites>
