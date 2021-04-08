@@ -1,0 +1,766 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+4008 (git sha1 92d5550a, clang 10.0.0-4ubuntu1 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: SPIMaster.sv
+Parsing formal SystemVerilog input from `SPIMaster.sv' to AST representation.
+Warning: Yosys has only limited support for tri-state logic at the moment. (SPIMaster.sv:578)
+Storing AST representation for module `$abstract\Top'.
+Storing AST representation for module `$abstract\SPIMaster'.
+Storing AST representation for module `$abstract\SPI_SLAVE'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\Top'.
+Generating RTLIL representation for module `\Top'.
+SPIMaster.sv:108: Warning: Identifier `\r_Slave_RX_Byte' is implicitly declared.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \Top
+Parameter \SPI_MODE = 3
+Parameter \CLKS_PER_HALF_BIT = 2
+
+2.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\SPIMaster'.
+Parameter \SPI_MODE = 3
+Parameter \CLKS_PER_HALF_BIT = 2
+Generating RTLIL representation for module `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster'.
+Parameter \SPI_MODE = 3
+
+2.2.3. Executing AST frontend in derive mode using pre-parsed AST for module `\SPI_SLAVE'.
+Parameter \SPI_MODE = 3
+Generating RTLIL representation for module `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011'.
+
+2.2.4. Analyzing design hierarchy..
+Top module:  \Top
+Used module:     $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster
+Used module:     $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011
+
+2.2.5. Analyzing design hierarchy..
+Top module:  \Top
+Used module:     $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster
+Used module:     $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011
+Removing unused module `$abstract\SPI_SLAVE'.
+Removing unused module `$abstract\SPIMaster'.
+Removing unused module `$abstract\Top'.
+Removed 3 unused modules.
+Module Top directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$SPIMaster.sv:558$91 in module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.
+Marked 1 switch rules as full_case in process $proc$SPIMaster.sv:538$88 in module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.
+Marked 1 switch rules as full_case in process $proc$SPIMaster.sv:522$87 in module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.
+Marked 2 switch rules as full_case in process $proc$SPIMaster.sv:490$82 in module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.
+Marked 2 switch rules as full_case in process $proc$SPIMaster.sv:457$78 in module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.
+Marked 1 switch rules as full_case in process $proc$SPIMaster.sv:389$74 in module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.
+Marked 3 switch rules as full_case in process $proc$SPIMaster.sv:358$48 in module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.
+Marked 3 switch rules as full_case in process $proc$SPIMaster.sv:328$37 in module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.
+Marked 1 switch rules as full_case in process $proc$SPIMaster.sv:308$35 in module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.
+Marked 5 switch rules as full_case in process $proc$SPIMaster.sv:250$24 in module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 13 redundant assignments.
+Promoted 11 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\Top.$proc$SPIMaster.sv:0$20'.
+  Set init value: $formal$SPIMaster.sv:111$2_EN = 1'0
+Found init rule in `\Top.$proc$SPIMaster.sv:0$18'.
+  Set init value: $formal$SPIMaster.sv:107$1_EN = 1'0
+Found init rule in `\Top.$proc$SPIMaster.sv:26$15'.
+  Set init value: \r_Clk = 1'0
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \i_Rst_L in `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:558$91'.
+Found async reset \i_SPI_CS_n in `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:538$88'.
+Found async reset \i_SPI_CS_n in `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:522$87'.
+Found async reset \i_Rst_L in `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:490$82'.
+Found async reset \i_SPI_CS_n in `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:457$78'.
+Found async reset \i_Rst_L in `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:389$74'.
+Found async reset \i_Rst_L in `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:358$48'.
+Found async reset \i_Rst_L in `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:328$37'.
+Found async reset \i_Rst_L in `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:308$35'.
+Found async reset \i_Rst_L in `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:250$24'.
+
+2.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:558$91'.
+     1/1: $0\r_TX_Byte[15:0]
+Creating decoders for process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:538$88'.
+     1/2: $0\r_SPI_MISO_Bit[0:0]
+     2/2: $0\r_TX_Bit_Count[3:0]
+Creating decoders for process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:522$87'.
+     1/1: $0\r_Preload_MISO[0:0]
+Creating decoders for process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:490$82'.
+     1/4: $0\o_RX_DV[0:0]
+     2/4: $0\r3_RX_Done[0:0]
+     3/4: $0\r2_RX_Done[0:0]
+     4/4: $0\o_RX_Byte[15:0]
+Creating decoders for process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:457$78'.
+     1/4: $0\r_RX_Bit_Count[3:0]
+     2/4: $0\r_RX_Done[0:0]
+     3/4: $0\r_RX_Byte[15:0]
+     4/4: $0\r_Temp_RX_Byte[15:0]
+Creating decoders for process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:389$74'.
+     1/1: $0\o_SPI_Clk[0:0]
+Creating decoders for process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:358$48'.
+     1/11: $3$lookahead\o_RX_Byte$47[15:0]$65
+     2/11: $3$bitselwrite$data$SPIMaster.sv:377$23[15:0]$64
+     3/11: $3$bitselwrite$mask$SPIMaster.sv:377$22[15:0]$63
+     4/11: $2$lookahead\o_RX_Byte$47[15:0]$58
+     5/11: $2$bitselwrite$data$SPIMaster.sv:377$23[15:0]$57
+     6/11: $2$bitselwrite$mask$SPIMaster.sv:377$22[15:0]$56
+     7/11: $1$lookahead\o_RX_Byte$47[15:0]$55
+     8/11: $1$bitselwrite$data$SPIMaster.sv:377$23[15:0]$54
+     9/11: $1$bitselwrite$mask$SPIMaster.sv:377$22[15:0]$53
+    10/11: $0\o_RX_DV[0:0]
+    11/11: $0\r_RX_Bit_Count[3:0]
+Creating decoders for process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:328$37'.
+     1/2: $0\r_TX_Bit_Count[3:0]
+     2/2: $0\o_SPI_MOSI[0:0]
+Creating decoders for process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:308$35'.
+     1/2: $0\r_TX_DV[0:0]
+     2/2: $0\r_TX_Byte[15:0]
+Creating decoders for process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:250$24'.
+     1/6: $0\o_TX_Ready[0:0]
+     2/6: $0\r_Trailing_Edge[0:0]
+     3/6: $0\r_Leading_Edge[0:0]
+     4/6: $0\r_SPI_Clk_Edges[5:0]
+     5/6: $0\r_SPI_Clk[0:0]
+     6/6: $0\r_SPI_Clk_Count[1:0]
+Creating decoders for process `\Top.$proc$SPIMaster.sv:0$20'.
+Creating decoders for process `\Top.$proc$SPIMaster.sv:0$18'.
+Creating decoders for process `\Top.$proc$SPIMaster.sv:34$17'.
+Creating decoders for process `\Top.$proc$SPIMaster.sv:33$16'.
+Creating decoders for process `\Top.$proc$SPIMaster.sv:26$15'.
+Creating decoders for process `\Top.$proc$SPIMaster.sv:17$14'.
+Creating decoders for process `\Top.$proc$SPIMaster.sv:104$5'.
+     1/4: $0$formal$SPIMaster.sv:107$1_EN[0:0]$7
+     2/4: $0$formal$SPIMaster.sv:107$1_CHECK[0:0]$6
+     3/4: $0$formal$SPIMaster.sv:111$2_EN[0:0]$9
+     4/4: $0$formal$SPIMaster.sv:111$2_CHECK[0:0]$8
+Creating decoders for process `\Top.$proc$SPIMaster.sv:44$3'.
+
+2.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\Top.\r_Master_CS_n' from process `\Top.$proc$SPIMaster.sv:34$17'.
+No latch inferred for signal `\Top.\r_Master_TX_DV' from process `\Top.$proc$SPIMaster.sv:33$16'.
+No latch inferred for signal `\Top.\r_Rst_L' from process `\Top.$proc$SPIMaster.sv:17$14'.
+No latch inferred for signal `\Top.\r_Clk' from process `\Top.$proc$SPIMaster.sv:44$3'.
+Removing init bit 1'0 for non-memory siginal `\Top.\r_Clk` in process `\Top.$proc$SPIMaster.sv:44$3`.
+
+2.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.\r_TX_Byte' using process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:558$91'.
+  created $adff cell `$procdff$249' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.\r_TX_Bit_Count' using process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:538$88'.
+  created $adff cell `$procdff$250' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.\r_SPI_MISO_Bit' using process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:538$88'.
+Warning: Async reset value `\r_TX_Byte [7]' is not constant!
+  created $dffsr cell `$procdff$251' with positive edge clock and positive level non-const reset.
+Creating register for signal `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.\r_Preload_MISO' using process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:522$87'.
+  created $adff cell `$procdff$258' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.\o_RX_DV' using process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:490$82'.
+  created $adff cell `$procdff$259' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.\o_RX_Byte' using process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:490$82'.
+  created $adff cell `$procdff$260' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.\r2_RX_Done' using process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:490$82'.
+  created $adff cell `$procdff$261' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.\r3_RX_Done' using process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:490$82'.
+  created $adff cell `$procdff$262' with positive edge clock and negative level reset.
+Creating register for signal `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.\r_RX_Bit_Count' using process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:457$78'.
+  created $adff cell `$procdff$263' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.\r_Temp_RX_Byte' using process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:457$78'.
+  created $dff cell `$procdff$266' with positive edge clock.
+Creating register for signal `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.\r_RX_Byte' using process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:457$78'.
+  created $dff cell `$procdff$269' with positive edge clock.
+Creating register for signal `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.\r_RX_Done' using process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:457$78'.
+  created $adff cell `$procdff$270' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.\o_SPI_Clk' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:389$74'.
+  created $adff cell `$procdff$271' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.\o_RX_DV' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:358$48'.
+  created $adff cell `$procdff$272' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.\o_RX_Byte' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:358$48'.
+  created $adff cell `$procdff$273' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.\r_RX_Bit_Count' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:358$48'.
+  created $adff cell `$procdff$274' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$bitselwrite$mask$SPIMaster.sv:377$22' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:358$48'.
+  created $adff cell `$procdff$275' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$bitselwrite$data$SPIMaster.sv:377$23' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:358$48'.
+  created $adff cell `$procdff$276' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$lookahead\o_RX_Byte$47' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:358$48'.
+  created $adff cell `$procdff$277' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.\o_SPI_MOSI' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:328$37'.
+  created $adff cell `$procdff$278' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.\r_TX_Bit_Count' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:328$37'.
+  created $adff cell `$procdff$279' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.\r_TX_DV' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:308$35'.
+  created $adff cell `$procdff$280' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.\r_TX_Byte' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:308$35'.
+  created $adff cell `$procdff$281' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.\o_TX_Ready' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:250$24'.
+  created $adff cell `$procdff$282' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.\r_SPI_Clk_Count' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:250$24'.
+  created $adff cell `$procdff$283' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.\r_SPI_Clk' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:250$24'.
+  created $adff cell `$procdff$284' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.\r_SPI_Clk_Edges' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:250$24'.
+  created $adff cell `$procdff$285' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.\r_Leading_Edge' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:250$24'.
+  created $adff cell `$procdff$286' with positive edge clock and negative level reset.
+Creating register for signal `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.\r_Trailing_Edge' using process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:250$24'.
+  created $adff cell `$procdff$287' with positive edge clock and negative level reset.
+Creating register for signal `\Top.$formal$SPIMaster.sv:107$1_CHECK' using process `\Top.$proc$SPIMaster.sv:104$5'.
+  created $dff cell `$procdff$288' with positive edge clock.
+Creating register for signal `\Top.$formal$SPIMaster.sv:107$1_EN' using process `\Top.$proc$SPIMaster.sv:104$5'.
+  created $dff cell `$procdff$289' with positive edge clock.
+Creating register for signal `\Top.$formal$SPIMaster.sv:111$2_CHECK' using process `\Top.$proc$SPIMaster.sv:104$5'.
+  created $dff cell `$procdff$290' with positive edge clock.
+Creating register for signal `\Top.$formal$SPIMaster.sv:111$2_EN' using process `\Top.$proc$SPIMaster.sv:104$5'.
+  created $dff cell `$procdff$291' with positive edge clock.
+
+2.3.9. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.3.10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:558$91'.
+Removing empty process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:558$91'.
+Removing empty process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:538$88'.
+Removing empty process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:522$87'.
+Found and cleaned up 1 empty switch in `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:490$82'.
+Removing empty process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:490$82'.
+Found and cleaned up 2 empty switches in `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:457$78'.
+Removing empty process `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$proc$SPIMaster.sv:457$78'.
+Removing empty process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:389$74'.
+Found and cleaned up 3 empty switches in `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:358$48'.
+Removing empty process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:358$48'.
+Found and cleaned up 3 empty switches in `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:328$37'.
+Removing empty process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:328$37'.
+Found and cleaned up 1 empty switch in `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:308$35'.
+Removing empty process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:308$35'.
+Found and cleaned up 4 empty switches in `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:250$24'.
+Removing empty process `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$proc$SPIMaster.sv:250$24'.
+Removing empty process `Top.$proc$SPIMaster.sv:0$20'.
+Removing empty process `Top.$proc$SPIMaster.sv:0$18'.
+Removing empty process `Top.$proc$SPIMaster.sv:34$17'.
+Removing empty process `Top.$proc$SPIMaster.sv:33$16'.
+Removing empty process `Top.$proc$SPIMaster.sv:26$15'.
+Removing empty process `Top.$proc$SPIMaster.sv:17$14'.
+Found and cleaned up 3 empty switches in `\Top.$proc$SPIMaster.sv:104$5'.
+Removing empty process `Top.$proc$SPIMaster.sv:104$5'.
+Removing empty process `Top.$proc$SPIMaster.sv:44$3'.
+Cleaned up 18 empty switches.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.
+<suppressed ~10 debug messages>
+Optimizing module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.
+<suppressed ~14 debug messages>
+Optimizing module Top.
+<suppressed ~5 debug messages>
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster..
+Finding unused cells or wires in module \Top..
+Removed 24 unused cells and 152 unused wires.
+<suppressed ~31 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster...
+Checking module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011...
+Checking module Top...
+Warning: Wire Top.\r_Slave_TX_DV is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [15] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [14] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [13] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [12] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [11] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [10] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [9] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [8] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [7] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [6] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [5] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [4] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [3] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [2] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [1] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [0] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [15] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [14] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [13] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [12] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [11] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [10] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [9] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [8] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [7] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [6] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [5] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [4] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [3] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [2] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [1] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [0] is used but has no driver.
+Warning: Wire Top.\r_Clk is used but has no driver.
+Found and reported 34 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.
+Optimizing module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.
+Optimizing module Top.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster'.
+<suppressed ~9 debug messages>
+Finding identical cells in module `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\Top'.
+<suppressed ~8 debug messages>
+Removed a total of 6 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$115.
+Running muxtree optimizer on module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \Top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 1 multiplexer ports.
+<suppressed ~21 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.
+    New ctrl vector for $mux cell $procmux$223: { }
+  Optimizing cells in module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.
+  Optimizing cells in module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.
+  Optimizing cells in module \Top.
+Performed a total of 1 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster'.
+Finding identical cells in module `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\Top'.
+Removed a total of 0 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster..
+Finding unused cells or wires in module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \Top..
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~2 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.
+Optimizing module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.
+Optimizing module Top.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \Top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~21 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.
+  Optimizing cells in module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.
+  Optimizing cells in module \Top.
+Performed a total of 0 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster'.
+Finding identical cells in module `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\Top'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster..
+Finding unused cells or wires in module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \Top..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.
+Optimizing module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.
+Optimizing module Top.
+
+2.7.14. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$gt$SPIMaster.sv:273$26 ($gt).
+Removed top 31 bits (of 32) from port B of cell $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$sub$SPIMaster.sv:279$28 ($sub).
+Removed top 26 bits (of 32) from port Y of cell $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$sub$SPIMaster.sv:279$28 ($sub).
+Removed top 1 bits (of 2) from port B of cell $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$eq$SPIMaster.sv:284$30 ($eq).
+Removed top 31 bits (of 32) from port B of cell $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$add$SPIMaster.sv:288$32 ($add).
+Removed top 30 bits (of 32) from port Y of cell $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$add$SPIMaster.sv:288$32 ($add).
+Removed top 31 bits (of 32) from port B of cell $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$sub$SPIMaster.sv:350$45 ($sub).
+Removed top 28 bits (of 32) from port Y of cell $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$sub$SPIMaster.sv:350$45 ($sub).
+Removed top 15 bits (of 16) from port A of cell $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$shl$SPIMaster.sv:0$68 ($shl).
+Removed top 31 bits (of 32) from port B of cell $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$sub$SPIMaster.sv:378$72 ($sub).
+Removed top 28 bits (of 32) from port Y of cell $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$sub$SPIMaster.sv:378$72 ($sub).
+Removed top 30 bits (of 32) from wire $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$add$SPIMaster.sv:288$32_Y.
+Removed top 28 bits (of 32) from wire $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$sub$SPIMaster.sv:350$45_Y.
+Removed top 28 bits (of 32) from wire $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$sub$SPIMaster.sv:378$72_Y.
+Removed top 31 bits (of 32) from port B of cell $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$add$SPIMaster.sv:468$79 ($add).
+Removed top 28 bits (of 32) from port Y of cell $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$add$SPIMaster.sv:468$79 ($add).
+Removed top 1 bits (of 4) from port B of cell $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$eq$SPIMaster.sv:478$81 ($eq).
+Removed top 31 bits (of 32) from port B of cell $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$sub$SPIMaster.sv:546$89 ($sub).
+Removed top 28 bits (of 32) from port Y of cell $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$sub$SPIMaster.sv:546$89 ($sub).
+Removed cell Top.$procdff$289 ($dff).
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster..
+Finding unused cells or wires in module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \Top..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~3 debug messages>
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.
+Optimizing module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.
+Optimizing module Top.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster'.
+Finding identical cells in module `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\Top'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster..
+Finding unused cells or wires in module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \Top..
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster ===
+
+   Number of wires:                 67
+   Number of wire bits:            373
+   Number of public wires:          20
+   Number of public wire bits:      77
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 60
+     $add                            1
+     $adff                          13
+     $and                            1
+     $eq                             2
+     $gt                             1
+     $logic_not                      1
+     $mux                           32
+     $not                            2
+     $or                             1
+     $shiftx                         1
+     $shl                            2
+     $sub                            3
+
+=== $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011 ===
+
+   Number of wires:                 41
+   Number of wire bits:            203
+   Number of public wires:          23
+   Number of public wire bits:     104
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 32
+     $add                            1
+     $adff                           9
+     $dff                            2
+     $dffsr                          1
+     $eq                             2
+     $logic_and                      1
+     $mux                           12
+     $not                            2
+     $shiftx                         1
+     $sub                            1
+
+=== Top ===
+
+   Number of wires:                 18
+   Number of wire bits:             78
+   Number of public wires:          17
+   Number of public wire bits:      77
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $assert                         1
+     $dff                            1
+     $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster      1
+     $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011      1
+
+=== design hierarchy ===
+
+   Top                               1
+     $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster      1
+     $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011      1
+
+   Number of wires:                126
+   Number of wire bits:            654
+   Number of public wires:          60
+   Number of public wire bits:     258
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 94
+     $add                            2
+     $adff                          22
+     $and                            1
+     $assert                         1
+     $dff                            3
+     $dffsr                          1
+     $eq                             4
+     $gt                             1
+     $logic_and                      1
+     $logic_not                      1
+     $mux                           44
+     $not                            4
+     $or                             1
+     $shiftx                         2
+     $shl                            2
+     $sub                            4
+
+2.13. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster...
+Checking module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011...
+Checking module Top...
+Warning: Wire Top.\r_Slave_TX_DV is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [15] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [14] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [13] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [12] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [11] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [10] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [9] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [8] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [7] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [6] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [5] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [4] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [3] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [2] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [1] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [0] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [15] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [14] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [13] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [12] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [11] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [10] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [9] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [8] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [7] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [6] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [5] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [4] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [3] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [2] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [1] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [0] is used but has no driver.
+Warning: Wire Top.\r_Clk is used but has no driver.
+Found and reported 34 problems.
+
+3. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+4. Executing ASYNC2SYNC pass.
+Replacing $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$procdff$271 ($adff): ARST=\i_Rst_L, D=\r_SPI_Clk, Q=\o_SPI_Clk
+Replacing $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$procdff$272 ($adff): ARST=\i_Rst_L, D=$0\o_RX_DV[0:0], Q=\o_RX_DV
+Replacing $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$procdff$273 ($adff): ARST=\i_Rst_L, D=$0$lookahead\o_RX_Byte$47[15:0]$51, Q=\o_RX_Byte
+Replacing $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$procdff$274 ($adff): ARST=\i_Rst_L, D=$0\r_RX_Bit_Count[3:0], Q=\r_RX_Bit_Count
+Replacing $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$procdff$278 ($adff): ARST=\i_Rst_L, D=$0\o_SPI_MOSI[0:0], Q=\o_SPI_MOSI
+Replacing $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$procdff$279 ($adff): ARST=\i_Rst_L, D=$0\r_TX_Bit_Count[3:0], Q=\r_TX_Bit_Count
+Replacing $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$procdff$281 ($adff): ARST=\i_Rst_L, D=$0\r_TX_Byte[15:0], Q=\r_TX_Byte
+Replacing $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$procdff$282 ($adff): ARST=\i_Rst_L, D=$0\o_TX_Ready[0:0], Q=\o_TX_Ready
+Replacing $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$procdff$283 ($adff): ARST=\i_Rst_L, D=$0\r_SPI_Clk_Count[1:0], Q=\r_SPI_Clk_Count
+Replacing $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$procdff$284 ($adff): ARST=\i_Rst_L, D=$0\r_SPI_Clk[0:0], Q=\r_SPI_Clk
+Replacing $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$procdff$285 ($adff): ARST=\i_Rst_L, D=$0\r_SPI_Clk_Edges[5:0], Q=\r_SPI_Clk_Edges
+Replacing $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$procdff$286 ($adff): ARST=\i_Rst_L, D=$0\r_Leading_Edge[0:0], Q=\r_Leading_Edge
+Replacing $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.$procdff$287 ($adff): ARST=\i_Rst_L, D=$0\r_Trailing_Edge[0:0], Q=\r_Trailing_Edge
+Replacing $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$procdff$249 ($adff): ARST=\i_Rst_L, D=$0\r_TX_Byte[15:0], Q=\r_TX_Byte
+Replacing $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$procdff$250 ($adff): ARST=\i_SPI_CS_n, D=$0\r_TX_Bit_Count[3:0], Q=\r_TX_Bit_Count
+Replacing $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$procdff$251 ($dffsr): SET=$auto$proc_dff.cc:153:gen_dffsr$253, CLR=$auto$proc_dff.cc:154:gen_dffsr$254, D=$0\r_SPI_MISO_Bit[0:0], Q=\r_SPI_MISO_Bit
+Replacing $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$procdff$258 ($adff): ARST=\i_SPI_CS_n, D=1'0, Q=\r_Preload_MISO
+Replacing $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$procdff$259 ($adff): ARST=\i_Rst_L, D=$0\o_RX_DV[0:0], Q=\o_RX_DV
+Replacing $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$procdff$260 ($adff): ARST=\i_Rst_L, D=$0\o_RX_Byte[15:0], Q=\o_RX_Byte
+Replacing $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$procdff$261 ($adff): ARST=\i_Rst_L, D=\r_RX_Done, Q=\r2_RX_Done
+Replacing $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$procdff$262 ($adff): ARST=\i_Rst_L, D=\r2_RX_Done, Q=\r3_RX_Done
+Replacing $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$procdff$263 ($adff): ARST=\i_SPI_CS_n, D=$0\r_RX_Bit_Count[3:0], Q=\r_RX_Bit_Count
+Replacing $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.$procdff$270 ($adff): ARST=\i_SPI_CS_n, D=$0\r_RX_Done[0:0], Q=\r_RX_Done
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster..
+Finding unused cells or wires in module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \Top..
+
+6. Executing SETUNDEF pass (replace undef values with defined constants).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.
+Optimizing module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.
+Optimizing module Top.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster'.
+Finding identical cells in module `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\Top'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$287 ($sdff) from module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster (D = $procmux$178_Y, Q = $auto$async2sync.cc:140:execute$319, rval = 1'0).
+Adding SRST signal on $procdff$286 ($sdff) from module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster (D = $procmux$187_Y, Q = $auto$async2sync.cc:140:execute$317, rval = 1'0).
+Adding SRST signal on $procdff$285 ($sdff) from module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster (D = $procmux$204_Y [4:0], Q = $auto$async2sync.cc:140:execute$315 [4:0], rval = 5'00000).
+Adding SRST signal on $procdff$282 ($sdff) from module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster (D = $procmux$171_Y, Q = $auto$async2sync.cc:140:execute$309, rval = 1'0).
+Adding SRST signal on $procdff$279 ($sdff) from module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster (D = $procmux$152_Y, Q = $auto$async2sync.cc:140:execute$305, rval = 4'1111).
+Adding SRST signal on $procdff$274 ($sdff) from module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster (D = $procmux$147_Y, Q = $auto$async2sync.cc:140:execute$301, rval = 4'1111).
+Adding SRST signal on $procdff$272 ($sdff) from module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster (D = $procmux$139_Y, Q = $auto$async2sync.cc:140:execute$297, rval = 1'0).
+Adding EN signal on $procdff$269 ($dff) from module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011 (D = { \r_Temp_RX_Byte [14:0] \i_SPI_MOSI }, Q = \r_RX_Byte).
+Adding EN signal on $procdff$266 ($dff) from module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011 (D = { \r_Temp_RX_Byte [14:0] \i_SPI_MOSI }, Q = \r_Temp_RX_Byte).
+
+7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster..
+Finding unused cells or wires in module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \Top..
+Removed 13 unused cells and 13 unused wires.
+<suppressed ~15 debug messages>
+
+7.5. Rerunning OPT passes. (Removed registers in this run.)
+
+7.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.
+Optimizing module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.
+Optimizing module Top.
+
+7.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster'.
+<suppressed ~27 debug messages>
+Finding identical cells in module `$paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011'.
+Finding identical cells in module `\Top'.
+Removed a total of 9 cells.
+
+7.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster..
+Finding unused cells or wires in module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module \Top..
+Removed 0 unused cells and 9 unused wires.
+<suppressed ~1 debug messages>
+
+7.10. Finished fast OPT passes.
+
+8. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster...
+Checking module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011...
+Checking module Top...
+Warning: Wire Top.\r_Slave_TX_DV is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [15] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [14] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [13] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [12] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [11] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [10] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [9] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [8] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [7] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [6] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [5] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [4] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [3] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [2] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [1] is used but has no driver.
+Warning: Wire Top.\r_Slave_TX_Byte [0] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [15] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [14] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [13] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [12] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [11] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [10] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [9] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [8] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [7] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [6] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [5] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [4] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [3] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [2] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [1] is used but has no driver.
+Warning: Wire Top.\r_Master_TX_Byte [0] is used but has no driver.
+Warning: Wire Top.\r_Clk is used but has no driver.
+Found and reported 34 problems.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \Top
+Used module:     $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster
+Used module:     $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011
+
+9.2. Analyzing design hierarchy..
+Top module:  \Top
+Used module:     $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster
+Used module:     $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011
+Removed 0 unused modules.
+Module Top directly or indirectly contains formal properties -> setting "keep" attribute.
+
+10. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+Warnings: 37 unique messages, 105 total
+End of script. Logfile hash: 515ddcd0ed, CPU: user 0.65s system 0.10s, MEM: 12.55 MB peak
+Yosys 0.9+4008 (git sha1 92d5550a, clang 10.0.0-4ubuntu1 -fPIC -Os)
+Time spent: 33% 8x opt_clean (0 sec), 26% 3x check (0 sec), ...

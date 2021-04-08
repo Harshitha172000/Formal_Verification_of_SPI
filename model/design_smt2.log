@@ -1,0 +1,135 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+4008 (git sha1 92d5550a, clang 10.0.0-4ubuntu1 -fPIC -Os)
+
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+3. Printing statistics.
+
+=== Top ===
+
+   Number of wires:                 19
+   Number of wire bits:             79
+   Number of public wires:          17
+   Number of public wire bits:      77
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     $anyseq                         1
+     $assert                         1
+     $dff                            1
+     $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster      1
+     $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011      1
+
+=== $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011 ===
+
+   Number of wires:                 65
+   Number of wire bits:            284
+   Number of public wires:          23
+   Number of public wire bits:     104
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 56
+     $add                            1
+     $and                            2
+     $dff                           12
+     $eq                             2
+     $logic_and                      1
+     $mux                           29
+     $not                            4
+     $or                             2
+     $reduce_and                     1
+     $shiftx                         1
+     $sub                            1
+
+=== $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster ===
+
+   Number of wires:                 92
+   Number of wire bits:            475
+   Number of public wires:          20
+   Number of public wire bits:      77
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 86
+     $add                            1
+     $and                            1
+     $dff                           14
+     $eq                             2
+     $gt                             1
+     $logic_not                      1
+     $mux                           49
+     $not                            5
+     $or                             1
+     $reduce_or                      5
+     $shiftx                         1
+     $shl                            2
+     $sub                            3
+
+=== design hierarchy ===
+
+   Top                               1
+     $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster      1
+     $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011      1
+
+   Number of wires:                176
+   Number of wire bits:            838
+   Number of public wires:          60
+   Number of public wire bits:     258
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                145
+     $add                            2
+     $and                            3
+     $anyseq                         1
+     $assert                         1
+     $dff                           27
+     $eq                             4
+     $gt                             1
+     $logic_and                      1
+     $logic_not                      1
+     $mux                           78
+     $not                            9
+     $or                             3
+     $reduce_and                     1
+     $reduce_or                      5
+     $shiftx                         2
+     $shl                            2
+     $sub                            4
+
+4. Executing SMT2 backend.
+Creating SMT-LIBv2 representation of module $paramod$595d92dff835361a0acad37f0f9759daa40a135f\SPIMaster.
+Creating SMT-LIBv2 representation of module $paramod\SPI_SLAVE\SPI_MODE=s32'00000000000000000000000000000011.
+Creating SMT-LIBv2 representation of module Top.
+
+End of script. Logfile hash: 0b5ec0a839, CPU: user 0.09s system 0.02s, MEM: 10.56 MB peak
+Yosys 0.9+4008 (git sha1 92d5550a, clang 10.0.0-4ubuntu1 -fPIC -Os)
+Time spent: 62% 2x write_smt2 (0 sec), 30% 2x read_ilang (0 sec), ...
